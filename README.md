@@ -26,7 +26,7 @@ All versions that can be downloaded from the server is included in the version l
 ## Install
 
 ```
-asdf plugin-add mongodb https://github.com/sylph01/asdf-mongodb.git
+asdf plugin-add mongodb https://github.com/junminahn/asdf-mongodb.git
 ```
 
 ## Use
