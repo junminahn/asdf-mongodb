@@ -19,7 +19,11 @@ install_mongo() {
   [ "linux" = "${platform}" ] && tempdir=$(mktemp -d asdf-mongodb.XXXX) || tempdir=$(mktemp -dt asdf-mongodb.XXXX)
 
   if [[ "linux" = "${platform}" ]]; then
-    filename="mongodb-linux-${arch}-${version}.tgz"
+    if [[ "$(unify_version "$version")" > "$(unify_version "4.1.6")" ]]; then
+      filename="mongodb-linux-${arch}-ubuntu1804-${version}.tgz"
+    else
+      filename="mongodb-linux-${arch}-${version}.tgz"
+    fi
   else
     if [[ "$(unify_version "$version")" > "$(unify_version "4.2")" ]]; then
       filename="mongodb-macos-x86_64-${version}.tgz"
